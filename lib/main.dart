@@ -1,4 +1,4 @@
-import 'package:fctimer/home/TimeFramesList.dart';
+import 'package:fctimer/home/home_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -19,47 +19,8 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'FC Timer'),
+      home: const HomePage(title: 'FC Timer'),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 12;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: CustomScrollView(
-        slivers: [
-          const SliverAppBar(
-            title: Text("FC Timer"),
-            centerTitle: true,
-            floating: true,
-          ),
-          TimeFramesList(counter: _counter)
-        ],
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
-    );
-  }
-}

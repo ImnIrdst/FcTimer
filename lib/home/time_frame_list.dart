@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
-import 'TimeFrameItem.dart';
+import 'time_frame_item.dart';
 
 class TimeFramesList extends StatelessWidget {
   const TimeFramesList({
