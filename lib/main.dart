@@ -1,5 +1,4 @@
-import 'dart:math';
-
+import 'package:fctimer/home/TimeFramesList.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -53,13 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
             centerTitle: true,
             floating: true,
           ),
-          SliverList(
-            delegate: SliverChildBuilderDelegate(
-              // padding: const EdgeInsets.symmetric(vertical: 128.0, horizontal: 0.0),
-              (context, index) => Text("asd $index"),
-              childCount: _counter,
-            ),
-          ),
+          TimeFramesList(counter: _counter)
         ],
       ),
       floatingActionButton: FloatingActionButton(
