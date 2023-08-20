@@ -1,3 +1,4 @@
+import 'package:fctimer/home/time_frame_model.dart';
 import 'package:flutter/material.dart';
 
 import 'time_frame_list.dart';
@@ -12,11 +13,26 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int _counter = 12;
+  int _counter = 1;
+
+  List<TimeFrameModel> timeFrameList = [
+    TimeFrameModel(
+      "TODO 1",
+      DateTime.now(),
+      DateTime.now().add(const Duration(hours: 1)),
+    )
+  ];
 
   void _incrementCounter() {
     setState(() {
       _counter++;
+      timeFrameList.add(
+        TimeFrameModel(
+          "TODO $_counter",
+          DateTime.now(),
+          DateTime.now().add(Duration(hours: _counter)),
+        ),
+      );
     });
   }
 
@@ -30,7 +46,7 @@ class _HomePageState extends State<HomePage> {
             centerTitle: true,
             floating: true,
           ),
-          TimeFramesList(counter: _counter)
+          TimeFramesList(counter: _counter, timeFrameList: timeFrameList)
         ],
       ),
       floatingActionButton: FloatingActionButton(
